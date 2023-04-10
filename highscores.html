@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Highscores page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="scores"><a href="highscores.html">View Hightscores</a></div>
+    <div class="timer">Timer starts:<span id="time"></span></div>
+    <div class="wrapper">
+        <div id="start-screen" class="start">
+            <h1>Amazing Historical Facts Quiz</h1>
+            <p>
+                Try to answer the following amazing historical facts quiz within the time limit. Keep in mind that
+                incorrect answes will penalize your score/time by 15 seconds!
+            </p>
+            <button id="start">Start Quiz</button>
+        </div>
+        <div id="questions" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+        <div id="end-screen" class="hide">
+            <h2>All done!</h2>
+            <p>Your final scrore is <span id="final-score"></span>.</p>
+            <p>Enter your initials:<input type="text" id="initials" max="3">
+<button id="submit">Submit</button>
+            </p>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

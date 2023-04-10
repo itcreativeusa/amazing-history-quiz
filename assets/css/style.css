@@ -1,0 +1,139 @@
+:root {
+  /* Declare variables */
+  --gold-color: #a17f1a;
+  --dark-color: #100c02;
+}
+body {
+  background-color: var(--dark-color);
+  color: var(--gold-color);
+  font-size: 1.25rem;
+  margin: 0 auto;
+  width: 96%;
+  text-align: center;
+}
+/* Link */
+a {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+/* Hide class */
+.hide {
+  display: none;
+}
+/* Show class */
+.show {
+  display: block;
+}
+/* View Highscores link*/
+.scores {
+  margin: 5%;
+}
+/* Current score*/
+.current-score {
+  position: absolute;
+  border: var(--gold-color) 3px solid;
+  padding: 15px;
+  /* width: 150px; */
+  font-size: 1.5rem;
+  border-radius: 20px;
+  top: 30px;
+  right: 10px;
+}
+
+/* Timer */
+.timer {
+  position: absolute;
+  border: var(--gold-color) 3px solid;
+  padding: 15px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  top: 30px;
+}
+/*Game wrapper*/
+.wrapper {
+  margin: 0 auto;
+  text-align: center;
+  margin: 100px 0;
+}
+/*Initials input*/
+input {
+  padding: 15px;
+  margin: 15px;
+}
+.choices {
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
+}
+/* Answers */
+li {
+  padding: 15px;
+  font-size: 1.5rem;
+  border: var(--gold-color) 2px solid;
+  border-radius: 15px;
+  margin-bottom: 3px;
+}
+/* Answers hover*/
+li:hover {
+  background-color: var(--gold-color);
+  color: white;
+}
+/* Result screet */
+
+#initials {
+  text-transform: uppercase;
+}
+
+/* Submit button */
+button {
+  background-color: var(--gold-color);
+  color: var(--dark-color);
+  padding: 15px;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+/* Submit button hover*/
+button:hover {
+  border: 2px solid white;
+}
+
+/* Media Query Screen max-width: 992px*/
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+}
+/* Large smartphones max-width: 768px */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+  .timer{
+    font-size: 1.25rem;
+  }
+  li {
+    padding: 15px;
+    font-size: 1.25rem;
+}
+.current-score {
+  font-size: 1.25rem;
+}
+}
+/* Small smartphones max-width: 576px */
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 1rem;
+  }
+  .timer{
+    font-size: 1rem;
+  }
+  li {
+    padding: 15px;
+    font-size: 1rem;
+}
+.current-score {
+  font-size: 1rem;
+}
+}
