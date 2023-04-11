@@ -60,6 +60,9 @@ var startQuiz = document.querySelector("#start");
 var questions = document.querySelector("#questions");
 var startScreen = document.querySelector("#start-screen");
 var endScreen = document.querySelector("#end-screen");
+var looseImgEl = document.querySelector("#looseImg");
+var winImgEl = document.querySelector("#winimg");
+var questionNumber = 0;
 
 //Scores
 var scoresEl = document.querySelector(".scores");
@@ -84,6 +87,7 @@ function getScores() {
 // Updates score count on screen and sets score count to client storage
 function setScores() {
   currentScoreEl.textContent = currentScore;
+
   localStorage.setItem("currentScore", currentScore);
 }
 
@@ -91,11 +95,12 @@ function onClickCorrect(event) {
   event.target.setAttribute("style", " color:white; background-color:green;");
   currentScore++;
   setScores();
-
+  nextQuestionWait();
 }
 
 function onClickIncorrect(event) {
   event.target.setAttribute("style", " color:white; background-color:red;");
+  nextQuestionWait();
 }
 
 function startQuestion(index) {
@@ -116,12 +121,22 @@ function startQuestion(index) {
   }
 }
 
+function nextQuestionSwitch() {
+  questionNumber++;
+  if (questionNumber < questionsArray.length) {
+    startQuestion(questionNumber);
+  } else {
+    sendMessage();
+  }
+}
+
+function nextQuestionWait() {
+  setTimeout(() => nextQuestionSwitch(), 1000);
+}
+
 startQuiz.addEventListener("click", function () {
-  // if (questions.getAttribute("class") == "hide") {
   questions.setAttribute("class", "show");
-  //} else {
-  //  questions.setAttribute("class", "hide");
-  //}
+  questionNumber = 0;
   startQuestion(0);
   setTime();
   //hide start-screen
@@ -129,27 +144,17 @@ startQuiz.addEventListener("click", function () {
   setScores();
 });
 
-// The winGame function is called when the win condition is met
-function winGame() {
-  timerEl.textContent = "YOU WON!🏆";
-}
-
 //Timer start
-
 // Selects element by class
 var timerEl = document.querySelector(".timer");
-
 // Selects element by id
 var mainEl = document.getElementById("time");
-
-var secondsLeft = 200;
-
+var secondsLeft = 20;
 function setTime() {
   // Sets interval in variable
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timerEl.textContent = secondsLeft + " seconds left";
-
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
@@ -159,7 +164,12 @@ function setTime() {
   }, 1000);
 }
 
-// Function to create text when time os out
+// Function to create text when time is out
 function sendMessage() {
   timerEl.textContent = "GAME OVER!";
+  finalScoreEl.textContent = currentScore;
+  questions.classList.add("hide");
+  questions.classList.remove("show");
+  endScreen.setAttribute("class", "show");
+ 
 }
