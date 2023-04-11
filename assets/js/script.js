@@ -60,9 +60,13 @@ var startQuiz = document.querySelector("#start");
 var questions = document.querySelector("#questions");
 var startScreen = document.querySelector("#start-screen");
 var endScreen = document.querySelector("#end-screen");
-var looseImgEl = document.querySelector("#looseImg");
-var winImgEl = document.querySelector("#winimg");
 var questionNumber = 0;
+var highscoresEl = document.querySelector("#highscores");
+var highscoreCounterSpan = document.querySelector("#highscore-count");
+var scoreList = document.querySelector("#score-list");
+var submitEl = document.querySelector("#submit");
+var initials = document.querySelector("#initials");
+var scores = [];
 
 //Scores
 var scoresEl = document.querySelector(".scores");
@@ -171,5 +175,93 @@ function sendMessage() {
   questions.classList.add("hide");
   questions.classList.remove("show");
   endScreen.setAttribute("class", "show");
- 
+  highscoresEl.setAttribute("class", "show");
+  highscoresEl.classList.remove("hide");
 }
+
+//Highscores
+// The following function renders items in a score list as <li> elements
+function renderScores() {
+  // Clear scorelist element and update highscoreCountSpan
+  scoreList.innerHTML = "";
+  // highscoreCountSpan.textContent = todos.length;
+
+  // Render a new li for each score
+  for (var i = 0; i < scores.length; i++) {
+    var score = scores[i];
+
+    var li = document.createElement("li");
+    li.textContent = score;
+    li.setAttribute("data-index", i);
+
+    var button = document.createElement("button");
+    button.textContent = "Remove from list";
+
+    li.appendChild(button);
+    scoreList.appendChild(li);
+  }
+}
+
+// This function is being called below and will run when the page loads.
+function init() {
+  // Get stored todos from localStorage
+  var storedScores = JSON.parse(localStorage.getItem("scores"));
+
+  // If todos were retrieved from localStorage, update the todos array to it
+  if (storedScores !== null) {
+    scores = storedScores;
+  }
+
+  // This is a helper function that will render todos to the DOM
+  renderScores();
+}
+
+function storeScores() {
+  // Stringify and set key in localStorage to todos array
+  localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+// Add submit event to end-screen
+submitEl.addEventListener("click", function (event) {
+  event.preventDefault();
+  var initialsList = initials.value.trim();
+
+  // Return from function early if submitted initials input is blank
+  if (initialsList === "") {
+    return;
+  }
+
+  // Add new initials  to initials list array, clear the input
+  scores.push(initialsList);
+  initials.value = "";
+
+  // Store updated todos in localStorage, re-render the list
+  storeScores();
+  renderScores();
+});
+
+/*
+submitEl.addEventListener("click", function () {
+  console.log("button works");
+});
+
+*/
+
+// Add click event to todoList element
+scoreList.addEventListener("click", function (event) {
+  var element = event.target;
+
+  // Checks if element is a button
+  if (element.matches("button") === true) {
+    // Get its data-index value and remove the todo element from the list
+    var index = element.parentElement.getAttribute("data-index");
+    scores.splice(index, 1);
+
+    // Store updated todos in localStorage, re-render the list
+    storeScores();
+    renderScores();
+  }
+});
+
+// Calls init to retrieve data and render it to the page on load
+init();

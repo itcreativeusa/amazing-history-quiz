@@ -11,8 +11,10 @@ body {
   width: 96%;
   text-align: center;
 }
-img {width: 200px;
-margin: 0 auto;}
+img {
+  width: 200px;
+  margin: 0 auto;
+}
 /* Link */
 a {
   text-decoration: underline;
@@ -82,17 +84,26 @@ li:hover {
   background-color: var(--gold-color);
   color: white;
 }
+
+#score-list {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+
 /* Result screet */
 
 #initials {
   text-transform: uppercase;
 }
-#end-screen{
+#end-screen {
   font-size: 1.5rem;
 }
 
-.final-score{
-font-size: 2rem;
+.final-score {
+  font-size: 2rem;
 }
 /* Submit button */
 button {
@@ -119,21 +130,21 @@ button:hover {
   body {
     font-size: 1rem;
   }
-  .timer{
+  .timer {
     font-size: 1.25rem;
   }
   li {
     padding: 15px;
     font-size: 1.25rem;
-}
-.current-score {
-  font-size: 1.25rem;
-}
-#end-screen{
-  font-size: 1.25rem;
-}
-.final-score{
-  font-size: 1.25rem;
+  }
+  .current-score {
+    font-size: 1.25rem;
+  }
+  #end-screen {
+    font-size: 1.25rem;
+  }
+  .final-score {
+    font-size: 1.25rem;
   }
 }
 /* Small smartphones max-width: 576px */
@@ -141,20 +152,20 @@ button:hover {
   body {
     font-size: 1rem;
   }
-  .timer{
+  .timer {
     font-size: 1rem;
   }
   li {
     padding: 15px;
     font-size: 1rem;
-}
-.current-score {
-  font-size: 1rem;
-}
-#end-screen{
-  font-size: 1rem;
-}
-.final-score{
-  font-size: 1rem;
+  }
+  .current-score {
+    font-size: 1rem;
+  }
+  #end-screen {
+    font-size: 1rem;
+  }
+  .final-score {
+    font-size: 1rem;
   }
 }
