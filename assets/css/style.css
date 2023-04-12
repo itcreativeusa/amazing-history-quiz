@@ -11,15 +11,24 @@ body {
   width: 96%;
   text-align: center;
 }
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+}
 img {
   width: 200px;
   margin: 0 auto;
 }
 /* Link */
-a {
+a, #reset-game {
   text-decoration: underline;
   color: white;
   cursor: pointer;
+  padding: 15px;
+  font-size: 1.5rem;
 }
 /* Hide class */
 .hide {
@@ -31,28 +40,22 @@ a {
 }
 /* View Highscores link*/
 .scores {
-  margin: 5%;
+
 }
 /* Current score*/
 .current-score {
-  position: absolute;
   border: var(--gold-color) 3px solid;
   padding: 15px;
-  /* width: 150px; */
   font-size: 1.5rem;
   border-radius: 20px;
-  top: 30px;
-  right: 10px;
 }
 
 /* Timer */
 .timer {
-  position: absolute;
   border: var(--gold-color) 3px solid;
   padding: 15px;
   font-size: 1.5rem;
   border-radius: 20px;
-  top: 30px;
 }
 
 /*Game wrapper*/
@@ -86,12 +89,19 @@ li:hover {
 }
 
 #score-list {
-  width: fit-content;
+  width: 300px;
   margin: 0 auto;
   font-size: 2rem;
   text-transform: uppercase;
+  list-style-type:none;
+  line-height: 1.5;
 }
 
+#score-list button{
+  float: right;
+padding: 5px;
+border: 2px solid white;
+}
 
 /* Result screet */
 

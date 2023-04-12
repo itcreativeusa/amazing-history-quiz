@@ -11,12 +11,17 @@
 </head>
 
 <body>
+  <header>
+  <!--Timer-->
+  <section class="timer">Timer:<span id="time"></span></section> 
   <!--View Highscores-->
-  <section class="scores"><a href="#highscores">View Hightscores</a></section>
+  <section class="scores"><a href="#" id="view-highscores">View Hightscores</a></section>
+ <section><span id="reset-game">Reset game</span></section>
   <!--Current Score section-->
   <section class="current-score">Your score :<span id="current-score"></span></section>
-  <!--Timer-->
-  <section class="timer">Timer:<span id="time"></span></section>
+</header>
+ 
+
   <!--Wrapper-->
   <section class="wrapper">
     <!--Start game section-->
@@ -44,14 +49,14 @@
         <button id="submit">Submit</button>
       </p>
     </section>
+          <!--Highscores section-->
     <section id="highscores" class="hide">
-      <h3>Hightscores:<span id="highscore-count"></span></h3>
+      <h3>Hightscores</h3>
+      <span id="highscore-count"></span>
+      <p>Play quizz game to get the scores</p>
       <ul id="score-list"></ul>
-  
-      
     </section>
   </section>
-
   <script src="assets/js/script.js"></script>
 </body>
 
