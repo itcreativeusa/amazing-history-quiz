@@ -6,29 +6,31 @@
 body {
   background-color: var(--dark-color);
   color: var(--gold-color);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin: 0 auto;
   width: 96%;
   text-align: center;
+  height: 100%;
 }
-header{
+header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin-top: 15px;
 }
+
 img {
   width: 200px;
   margin: 0 auto;
 }
-/* Link */
-a, #reset-game {
+/* Link view highscores & reset game span */
+a,
+#reset-game {
   text-decoration: underline;
   color: white;
   cursor: pointer;
   padding: 15px;
-  font-size: 1.5rem;
 }
 /* Hide class */
 .hide {
@@ -38,26 +40,18 @@ a, #reset-game {
 .show {
   display: block;
 }
-/* View Highscores link*/
-.scores {
-
-}
 /* Current score*/
 .current-score {
   border: var(--gold-color) 3px solid;
   padding: 15px;
-  font-size: 1.5rem;
   border-radius: 20px;
 }
-
 /* Timer */
 .timer {
   border: var(--gold-color) 3px solid;
   padding: 15px;
-  font-size: 1.5rem;
   border-radius: 20px;
 }
-
 /*Game wrapper*/
 .wrapper {
   margin: 0 auto;
@@ -69,6 +63,7 @@ input {
   padding: 15px;
   margin: 15px;
 }
+/*Section questions*/
 .choices {
   width: 300px;
   margin: 0 auto;
@@ -77,7 +72,6 @@ input {
 /* Answers */
 li {
   padding: 15px;
-  font-size: 1.5rem;
   border: var(--gold-color) 2px solid;
   border-radius: 15px;
   margin-bottom: 3px;
@@ -88,94 +82,66 @@ li:hover {
   color: white;
 }
 
-#score-list {
-  width: 300px;
-  margin: 0 auto;
-  font-size: 2rem;
-  text-transform: uppercase;
-  list-style-type:none;
-  line-height: 1.5;
-}
-
-#score-list button{
-  float: right;
-padding: 5px;
-border: 2px solid white;
-}
-
-/* Result screet */
-
+/* Result screen */
 #initials {
   text-transform: uppercase;
 }
-#end-screen {
-  font-size: 1.5rem;
-}
 
-.final-score {
-  font-size: 2rem;
+/*Highscores list*/
+#score-list {
+  width: 300px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  list-style-type: none;
+  line-height: 1.5;
+}
+/*Button remove from the list*/
+#score-list button {
+  float: right;
+  padding: 5px;
+  border: 2px solid white;
 }
 /* Submit button */
 button {
   background-color: var(--gold-color);
   color: var(--dark-color);
   padding: 15px;
-  font-size: 1.25rem;
   border-radius: 5px;
   transition-duration: 0.4s;
+  font-size: 1.5rem;
 }
-
 /* Submit button hover*/
 button:hover {
   border: 2px solid white;
 }
 
 /* Media Query Screen max-width: 992px*/
-
 /* Tablets */
 @media screen and (max-width: 992px) {
 }
 /* Large smartphones max-width: 768px */
 @media screen and (max-width: 768px) {
-  body {
-    font-size: 1rem;
-  }
-  .timer {
+  body,
+  button {
     font-size: 1.25rem;
   }
   li {
     padding: 15px;
-    font-size: 1.25rem;
   }
-  .current-score {
-    font-size: 1.25rem;
-  }
-  #end-screen {
-    font-size: 1.25rem;
-  }
-  .final-score {
-    font-size: 1.25rem;
+  #score-list button {
+    padding: 3px;
   }
 }
 /* Small smartphones max-width: 576px */
 @media screen and (max-width: 576px) {
-  body {
-    font-size: 1rem;
-  }
-  .timer {
+  body,
+  button {
     font-size: 1rem;
   }
   li {
     padding: 15px;
-    font-size: 1rem;
   }
-  .current-score {
-    font-size: 1rem;
-  }
-  #end-screen {
-    font-size: 1rem;
-  }
-  .final-score {
-    font-size: 1rem;
+  #score-list button {
+    padding: 2px;
   }
 }
