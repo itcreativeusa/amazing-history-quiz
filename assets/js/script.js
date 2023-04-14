@@ -100,13 +100,17 @@ function setTime() {
   timerInterval = setInterval(function () {
     secondsLeft--;
     timerEl.textContent = secondsLeft + " seconds left";
-    if (secondsLeft === 0) {
-      // Stop execution of action at set interval
-      clearInterval(timerInterval);
-      // Calls function to create and append image
-      sendMessage();
+    if (secondsLeft === 0 || secondsLeft < 0) {
+      gameOver();
     }
   }, 1000);
+}
+//Stop timer, show message "game over", open end game section if the game is over
+function gameOver() {
+  // Stop execution of action at set interval
+  clearInterval(timerInterval);
+  sendMessage();
+  timerEl.textContent = "GAME OVER!";
 }
 
 //Scorecounter function
@@ -118,7 +122,6 @@ function getScores() {
 // Updates score count on screen and sets score count to client storage
 function setScores() {
   currentScoreEl.textContent = currentScore;
-
   localStorage.setItem("currentScore", currentScore);
 }
 //If user choice is correct do this
@@ -153,16 +156,14 @@ function startQuestion(indexQuestion) {
   }
 }
 
+
 //Next question
 function nextQuestionSwitch() {
   questionNumber++;
   if (questionNumber < questionsArray.length) {
     startQuestion(questionNumber);
   } else {
-    // Stop execution of action at set interval
-    clearInterval(timerInterval);
-    sendMessage();
-    timerEl.textContent = "GAME OVER!";
+    gameOver();
   }
 }
 //Next question time delay
@@ -182,7 +183,6 @@ startQuiz.addEventListener("click", function () {
 
 // Function to create text when time is out
 function sendMessage() {
-  timerEl.textContent = "GAME OVER!";
   finalScoreEl.textContent = currentScore;
   questions.classList.add("hide");
   questions.classList.remove("show");
