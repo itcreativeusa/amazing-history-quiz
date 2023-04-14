@@ -30,7 +30,7 @@ No special requirements
 
 Screenshot located in ``` assets/images ``` folder
 
-![My-portfolio-page screenshot](assets/images/screenshot-my-portfolio-page.png)
+![amazing-history-quiz](assets/images/screenshot.png)
    
 
 ## Credits

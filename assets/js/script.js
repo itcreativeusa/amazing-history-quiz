@@ -69,6 +69,7 @@ var submitEl = document.querySelector("#submit");
 var initialsEl = document.querySelector("#initials");
 var resetGameEl = document.getElementById("reset-game");
 var scores = [];
+var timerInterval = null;
 
 //Scores var declaration
 var scoresEl = document.querySelector(".scores");
@@ -76,6 +77,8 @@ var finalScoreEl = document.querySelector("#final-score");
 var currentScoreEl = document.querySelector("#current-score");
 var currentScore = 0;
 var viewHighscoresEl = document.querySelector("#view-highscores");
+var lose = document.querySelector("#lose");
+var win = document.querySelector("#win");
 
 // Questions & answers var declaration
 var questionsEl = document.querySelector("#questions");
@@ -84,6 +87,27 @@ var choicesEl = document.querySelector("#choices");
 // Create ordered list element
 var listEl = document.createElement("ol");
 choicesEl.appendChild(listEl);
+
+//Timer start
+// Select element by class
+var timerEl = document.querySelector(".timer");
+// Select element by id
+var mainEl = document.getElementById("time");
+//Set game time
+var secondsLeft = 20;
+function setTime() {
+  // Sets interval in variable
+  timerInterval = setInterval(function () {
+    secondsLeft--;
+    timerEl.textContent = secondsLeft + " seconds left";
+    if (secondsLeft === 0) {
+      // Stop execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      sendMessage();
+    }
+  }, 1000);
+}
 
 //Scorecounter function
 function getScores() {
@@ -107,6 +131,7 @@ function onClickCorrect(event) {
 //If user choice is incorrect do this
 function onClickIncorrect(event) {
   event.target.setAttribute("style", " color:white; background-color:red;");
+  secondsLeft = secondsLeft - 5; //substruct 5 sec if answer incorrect
   nextQuestionWait();
 }
 //Questions & answers
@@ -127,13 +152,17 @@ function startQuestion(indexQuestion) {
     }
   }
 }
+
 //Next question
 function nextQuestionSwitch() {
   questionNumber++;
   if (questionNumber < questionsArray.length) {
     startQuestion(questionNumber);
   } else {
+    // Stop execution of action at set interval
+    clearInterval(timerInterval);
     sendMessage();
+    timerEl.textContent = "GAME OVER!";
   }
 }
 //Next question time delay
@@ -144,33 +173,12 @@ function nextQuestionWait() {
 startQuiz.addEventListener("click", function () {
   questions.setAttribute("class", "show");
   questionNumber = 0;
-  startQuestion(0);
   setTime();
+  startQuestion(0);
   //hide start-screen
   startScreen.classList.add("hide");
   setScores();
 });
-
-//Timer starts
-// Selects element by class
-var timerEl = document.querySelector(".timer");
-// Selects element by id
-var mainEl = document.getElementById("time");
-//Sets game time
-var secondsLeft = 20;
-function setTime() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timerEl.textContent = secondsLeft + " seconds left";
-    if (secondsLeft === 0) {
-      // Stops execution of action at set interval
-      clearInterval(timerInterval);
-      // Calls function to create and append image
-      sendMessage();
-    }
-  }, 1000);
-}
 
 // Function to create text when time is out
 function sendMessage() {
@@ -181,6 +189,17 @@ function sendMessage() {
   endScreen.setAttribute("class", "show");
   highscoresEl.setAttribute("class", "show");
   highscoresEl.classList.remove("hide");
+  winner();
+}
+//Show winner image if user unsweres all question  or lose image
+function winner() {
+  if (currentScore === 6) {
+    win.setAttribute("class", "show");
+    win.classList.remove("hide");
+  } else {
+    lose.setAttribute("class", "show");
+    lose.classList.remove("hide");
+  }
 }
 
 //Highscores

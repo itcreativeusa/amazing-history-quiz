@@ -29,9 +29,13 @@
       <!--H1 title section-->
       <h1>Amazing Historical Facts Quiz</h1>
       <!--Game description section-->
+      <section class="p">
       <p>
-        Try to answer the following amazing historical facts quiz within the time limit by 20 seconds!
-      </p>
+        Try to answer the following amazing historical facts quiz within the time limit by 20 seconds!</p>
+      <p>Get score 6 to win the game.</p>
+     <p> Wrong answer reduses your time by 5 seconds!</p>
+
+    </section>
       <button id="start">Start Quiz</button>
     </section>
     <!--Questions section-->
@@ -43,7 +47,7 @@
     <section id="end-screen" class="hide">
       <!--H2 title section-->
       <h2>All done!</h2>
-      <IMG SRC="assets/images/duck-hunt.gif">
+      <IMG SRC="assets/images/duck-hunt.gif" class="hide" id="lose"> <IMG SRC="assets/images/winner.gif" class="hide" id="win">
       <p class="final-score">Your final scrore is <span id="final-score"></span>.</p>
       <p>Enter your initials:<input type="text" id="initials" maxlength="3">
         <button id="submit">Submit</button>
@@ -53,7 +57,7 @@
     <section id="highscores" class="hide">
       <h3>Hightscores</h3>
       <span id="highscore-count"></span>
-      <p>Play quizz game to get the scores</p>
+      <p>Play game to get the scores</p>
       <ul id="score-list"></ul>
     </section>
   </section>

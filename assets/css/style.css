@@ -3,6 +3,9 @@
   --gold-color: #a17f1a;
   --dark-color: #100c02;
 }
+* {
+  margin: 0;
+}
 body {
   background-color: var(--dark-color);
   color: var(--gold-color);
@@ -32,6 +35,26 @@ a,
   cursor: pointer;
   padding: 15px;
 }
+h1,
+h2,
+h3 {
+  margin: 0 0 15px 0;
+}
+h1 {
+  font-size: 2.5rem;
+}
+
+h2,
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.5rem;
+}
+.p {
+  margin: 20px 0;
+}
 /* Hide class */
 .hide {
   display: none;
@@ -54,7 +77,6 @@ a,
 }
 /*Game wrapper*/
 .wrapper {
-  margin: 0 auto;
   text-align: center;
   margin: 100px 0;
 }
@@ -86,7 +108,14 @@ li:hover {
 #initials {
   text-transform: uppercase;
 }
-
+.final-score {
+  margin: 15px 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+#highscores p {
+  margin: 15px 0;
+}
 /*Highscores list*/
 #score-list {
   width: 300px;
@@ -131,6 +160,13 @@ button:hover {
   #score-list button {
     padding: 3px;
   }
+  h1 {
+    font-size: 2rem;
+  }
+  h2,
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 /* Small smartphones max-width: 576px */
 @media screen and (max-width: 576px) {
@@ -143,5 +179,12 @@ button:hover {
   }
   #score-list button {
     padding: 2px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2,
+  h3 {
+    font-size: 1.5rem;
   }
 }
