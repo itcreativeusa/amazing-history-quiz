@@ -28,11 +28,11 @@ No special requirements
 
 ## Usage
 
-Get score 6 to win the game.
-Wrong answer subtracts time from the clock by 5 seconds.
-Initials & scores may be saved when the game is over.
-Click highscore section to see highscores.
-Reset button starts a new game.
+1. Get score 6 to win the game.
+2. Wrong answer subtracts time from the clock by 5 seconds.
+3. Initials & scores may be saved when the game is over.
+4. Click highscore section to see highscores.
+5. Reset button starts a new game.
 
 Screenshot located in `assets/images` folder
 
