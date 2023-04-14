@@ -29,7 +29,7 @@ No special requirements
 ## Usage
 
 Get score 6 to win the game.
-Wrong answer subtract time from the clock by 5 seconds.
+Wrong answer subtracts time from the clock by 5 seconds.
 Initials & scores may be saved when the game is over.
 Click highscore section to see highscores.
 Reset button starts a new game.
