@@ -94,7 +94,7 @@ var timerEl = document.querySelector(".timer");
 // Select element by id
 var mainEl = document.getElementById("time");
 //Set game time
-var secondsLeft = 20;
+var secondsLeft = 30;
 function setTime() {
   // Sets interval in variable
   timerInterval = setInterval(function () {

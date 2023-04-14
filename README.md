@@ -28,13 +28,19 @@ No special requirements
 
 ## Usage
 
+Get score 6 to win the game.
+Wrong answer subtract time from the clock by 5 seconds.
+Initials & scores may be saved when the game is over.
+Click highscore section to see highscores.
+Reset button starts a new game.
+
 Screenshot located in `assets/images` folder
 
 ![amazing-history-quiz](assets/images/screenshot.png)
 
 ## Credits
 
-Solution `while (listEl.firstChild)`& `listEl.removeChild(listEl.lastChild)` 
+Solution `while (listEl.firstChild)`& `listEl.removeChild(listEl.lastChild)`
 how to remove all child elements of a DOM in JavaScript was found here:
 
 https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
