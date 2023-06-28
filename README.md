@@ -8,7 +8,7 @@ https://itcreativeusa.github.io/amazing-history-quiz/
 Github link
 https://github.com/itcreativeusa/amazing-history-quiz
 
-This Amazing-history-quiz app was created as a bootcamp everyweek student challege. This app is a javascript quiz game. The code of this portfolio page was created from scratch.
+This Amazing-history-quiz app was created as a boot camp every week of student college. This app is a javascript quiz game. The code of this portfolio page was created from scratch.
 
 ## Table of Contents (Optional)
 
@@ -28,13 +28,13 @@ No special requirements
 
 ## Usage
 
-1. Get score 6 to win the game.
+1. Get a score 6 to win the game.
 2. Wrong answer subtracts time from the clock by 5 seconds.
 3. Initials & scores may be saved when the game is over.
-4. Click highscore section to see highscores.
+4. Click the high score section to see high scores.
 5. Reset button starts a new game.
 
-Screenshot located in `assets/images` folder
+The screenshot is located in `assets/images` folder
 
 ![amazing-history-quiz](assets/images/screenshot.png)
 
